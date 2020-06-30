@@ -1,0 +1,14 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container
+    a.navbar-brand(href='#') Blogger
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarSupportedContent
+      ul.navbar-nav.mr-auto
+        li(class={active : title=="home" , 'nav-item':true})
+          a.nav-link(href='/')
+            | Home 
+            span.sr-only (current)
+        li(class={active : title=="add_post" , 'nav-item':true})
+          a.nav-link(href='addPost') add
+

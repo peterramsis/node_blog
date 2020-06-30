@@ -1,0 +1,17 @@
+include ./layout/header
+include ./layout/navbar
+
+.container
+ .row
+  each item in posts 
+    div.col-12.col-lg-4
+     div.card.m-2
+       div.card-header
+        h5=item.name
+       .card-body
+        -var des = item.des
+        p!=des
+        a(href="post/"+item._id) more
+
+
+include ./layout/footer

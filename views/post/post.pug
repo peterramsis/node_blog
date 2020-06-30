@@ -1,0 +1,40 @@
+include ../layout/header
+include ../layout/navbar
+
+.container
+ .row
+   div.col-12
+    h1=post.name
+    p!=post.des
+
+   hr
+   .comments
+     h3 comments
+     if post.comments
+      each comment in post.comments
+       p=comment.name
+       p=comment.email
+       p=comment.body
+       hr
+     else
+      h3 no comments
+
+   hr
+
+   div.col-12.col-lg-12
+     h3.text-center add comment
+     form(method="post" ,action="addComment")
+       .form-group
+            label(for='exampleInputName') name
+            input.form-control#exampleInputName(type='text' name="name")
+       .form-group
+            label(for='exampleInputName') email
+            input.form-control#exampleInputName(type='email' name="email")
+       .form-group
+            label(for='exampleInputDes') body
+            textarea(class="form-control" name="body")
+            input(type="hidden", name="postId" value=postId)
+       input(type="submit", value="Add" class="btn btn-primary")
+
+
+include ../layout/footer

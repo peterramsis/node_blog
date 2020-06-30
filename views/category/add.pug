@@ -1,0 +1,12 @@
+include ../layout/header
+include ../layout/navbar
+
+.container
+ h4.text-center add Category
+ form(method="post" ,action="/addcat")
+  .form-group
+    label(for='exampleInputName') name
+    input.form-control#exampleInputName(type='text' name="name")
+  input(type="submit", value="Add" class="btn btn-primary")
+
+include ../layout/footer
